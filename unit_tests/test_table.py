@@ -18,7 +18,7 @@ import unittest
 class Test_make_row(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import make_row
+        from happybase.table import make_row
         return make_row(*args, **kwargs)
 
     def test_it(self):
@@ -29,7 +29,7 @@ class Test_make_row(unittest.TestCase):
 class Test_make_ordered_row(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import make_ordered_row
+        from happybase.table import make_ordered_row
         return make_ordered_row(*args, **kwargs)
 
     def test_it(self):
@@ -40,7 +40,7 @@ class Test_make_ordered_row(unittest.TestCase):
 class TestTable(unittest.TestCase):
 
     def _getTargetClass(self):
-        from google.cloud.happybase.table import Table
+        from happybase.table import Table
         return Table
 
     def _makeOne(self, *args, **kwargs):
@@ -48,7 +48,7 @@ class TestTable(unittest.TestCase):
 
     def test_constructor(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         instance = object()
@@ -80,7 +80,7 @@ class TestTable(unittest.TestCase):
 
     def test_families(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         connection = None
@@ -123,7 +123,7 @@ class TestTable(unittest.TestCase):
 
     def test_row_empty_row(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         connection = None
@@ -162,7 +162,7 @@ class TestTable(unittest.TestCase):
 
     def test_row_with_columns(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         connection = None
@@ -210,7 +210,7 @@ class TestTable(unittest.TestCase):
 
     def test_row_with_results(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
         from google.cloud.bigtable.row_data import PartialRowData
 
         row_key = 'row-key'
@@ -275,7 +275,7 @@ class TestTable(unittest.TestCase):
 
     def test_rows_with_columns(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         connection = None
@@ -333,7 +333,7 @@ class TestTable(unittest.TestCase):
 
     def test_rows_with_results(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
         from google.cloud.bigtable.row_data import PartialRowData
 
         row_key1 = 'row-key1'
@@ -404,7 +404,7 @@ class TestTable(unittest.TestCase):
 
     def test_cells_empty_row(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         connection = None
@@ -443,7 +443,7 @@ class TestTable(unittest.TestCase):
 
     def test_cells_with_results(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
         from google.cloud.bigtable.row_data import PartialRowData
 
         row_key = 'row-key'
@@ -505,7 +505,7 @@ class TestTable(unittest.TestCase):
 
     def test_scan_with_batch_size(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         warned = []
 
@@ -526,7 +526,7 @@ class TestTable(unittest.TestCase):
 
     def test_scan_with_scan_batching(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         warned = []
 
@@ -547,7 +547,7 @@ class TestTable(unittest.TestCase):
 
     def test_scan_with_sorted_columns(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         warned = []
 
@@ -593,7 +593,7 @@ class TestTable(unittest.TestCase):
                           expected_result=None):
         import types
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         row_start, row_stop = row_limits
@@ -701,8 +701,8 @@ class TestTable(unittest.TestCase):
 
     def test_put(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
-        from google.cloud.happybase.table import _WAL_SENTINEL
+        from happybase import table as MUT
+        from happybase.table import _WAL_SENTINEL
 
         name = 'table-name'
         connection = None
@@ -741,8 +741,8 @@ class TestTable(unittest.TestCase):
 
     def test_delete(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
-        from google.cloud.happybase.table import _WAL_SENTINEL
+        from happybase import table as MUT
+        from happybase.table import _WAL_SENTINEL
 
         name = 'table-name'
         connection = None
@@ -781,7 +781,7 @@ class TestTable(unittest.TestCase):
 
     def test_batch(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         connection = None
@@ -885,7 +885,7 @@ class TestTable(unittest.TestCase):
     def test_counter_set(self):
         import struct
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import table as MUT
+        from happybase import table as MUT
 
         name = 'table-name'
         connection = None
@@ -1010,7 +1010,7 @@ class TestTable(unittest.TestCase):
 class Test__gc_rule_to_dict(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import _gc_rule_to_dict
+        from happybase.table import _gc_rule_to_dict
         return _gc_rule_to_dict(*args, **kwargs)
 
     def test_with_null(self):
@@ -1099,7 +1099,7 @@ class Test__gc_rule_to_dict(unittest.TestCase):
 class Test__string_successor(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import _string_successor
+        from happybase.table import _string_successor
         return _string_successor(*args, **kwargs)
 
     def test_with_alphanumeric(self):
@@ -1122,7 +1122,7 @@ class Test__string_successor(unittest.TestCase):
 class Test__convert_to_time_range(unittest.TestCase):
 
     def _callFUT(self, timestamp=None):
-        from google.cloud.happybase.table import _convert_to_time_range
+        from happybase.table import _convert_to_time_range
         return _convert_to_time_range(timestamp=timestamp)
 
     def test_null(self):
@@ -1150,7 +1150,7 @@ class Test__convert_to_time_range(unittest.TestCase):
 class Test__cells_to_pairs(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import _cells_to_pairs
+        from happybase.table import _cells_to_pairs
         return _cells_to_pairs(*args, **kwargs)
 
     def test_without_timestamp(self):
@@ -1185,7 +1185,7 @@ class Test__cells_to_pairs(unittest.TestCase):
 class Test__partial_row_to_dict(unittest.TestCase):
 
     def _callFUT(self, partial_row_data, include_timestamp=False):
-        from google.cloud.happybase.table import _partial_row_to_dict
+        from happybase.table import _partial_row_to_dict
         return _partial_row_to_dict(partial_row_data,
                                     include_timestamp=include_timestamp)
 
@@ -1233,7 +1233,7 @@ class Test__partial_row_to_dict(unittest.TestCase):
 class Test__filter_chain_helper(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import _filter_chain_helper
+        from happybase.table import _filter_chain_helper
         return _filter_chain_helper(*args, **kwargs)
 
     def test_no_filters(self):
@@ -1344,7 +1344,7 @@ class Test__filter_chain_helper(unittest.TestCase):
 class Test__columns_filter_helper(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import _columns_filter_helper
+        from happybase.table import _columns_filter_helper
         return _columns_filter_helper(*args, **kwargs)
 
     def test_no_columns(self):
@@ -1393,7 +1393,7 @@ class Test__columns_filter_helper(unittest.TestCase):
 class Test__row_keys_filter_helper(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.table import _row_keys_filter_helper
+        from happybase.table import _row_keys_filter_helper
         return _row_keys_filter_helper(*args, **kwargs)
 
     def test_no_rows(self):

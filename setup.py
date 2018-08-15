@@ -63,8 +63,7 @@ setup(
     long_description=README,
     url='https://github.com/trauter/google-cloud-python-happybase',
     namespace_packages=[
-        'google',
-        'google.cloud',
+
     ],
     packages=find_packages('src'),
     package_dir={'': 'src'},
