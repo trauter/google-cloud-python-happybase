@@ -1,6 +1,6 @@
 HappyBase Batch
 ~~~~~~~~~~~~~~~
 
-.. automodule:: google.cloud.happybase.batch
+.. automodule:: happybase.batch
   :members:
   :show-inheritance:

@@ -20,8 +20,8 @@ import threading
 
 import six
 
-from google.cloud.happybase.connection import Connection
-from google.cloud.happybase.connection import _get_instance
+from happybase.connection import Connection
+from happybase.connection import _get_instance
 
 
 _MIN_POOL_SIZE = 1
@@ -120,7 +120,7 @@ class ConnectionPool(object):
         :param timeout: (Optional) Time (in seconds) to wait for a connection
                         to open.
 
-        :rtype: :class:`~google.cloud.happybase.connection.Connection`
+        :rtype: :class:`~happybase.connection.Connection`
         :returns: (Rather, yields) a connection from the queue.
         :raises: :class:`NoConnectionsAvailable` if no connection can be
                  retrieved from the pool before the ``timeout`` (only if

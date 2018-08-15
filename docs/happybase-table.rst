@@ -1,6 +1,6 @@
 HappyBase Table
 ~~~~~~~~~~~~~~~
 
-.. automodule:: google.cloud.happybase.table
+.. automodule:: happybase.table
   :members:
   :show-inheritance:

@@ -19,7 +19,7 @@ import unittest
 class TestConnectionPool(unittest.TestCase):
 
     def _getTargetClass(self):
-        from google.cloud.happybase.pool import ConnectionPool
+        from happybase.pool import ConnectionPool
         return ConnectionPool
 
     def _makeOne(self, *args, **kwargs):
@@ -28,7 +28,7 @@ class TestConnectionPool(unittest.TestCase):
     def test_constructor_defaults(self):
         import six
         import threading
-        from google.cloud.happybase.connection import Connection
+        from happybase.connection import Connection
 
         size = 11
         instance_copy = _Instance()
@@ -65,8 +65,8 @@ class TestConnectionPool(unittest.TestCase):
 
     def test_constructor_ignores_autoconnect(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase.connection import Connection
-        from google.cloud.happybase import pool as MUT
+        from happybase.connection import Connection
+        from happybase import pool as MUT
 
         class ConnectionWithOpen(Connection):
 
@@ -99,8 +99,8 @@ class TestConnectionPool(unittest.TestCase):
 
     def test_constructor_infers_instance(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase.connection import Connection
-        from google.cloud.happybase import pool as MUT
+        from happybase.connection import Connection
+        from happybase import pool as MUT
 
         size = 1
         instance_copy = _Instance()
@@ -138,7 +138,7 @@ class TestConnectionPool(unittest.TestCase):
 
     def _makeOneWithMockQueue(self, queue_return):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import pool as MUT
+        from happybase import pool as MUT
 
         # We are going to use a fake queue, so we don't want any connections
         # or instances to be created in the constructor.
@@ -161,7 +161,7 @@ class TestConnectionPool(unittest.TestCase):
         self.assertEqual(pool._queue._put_calls, [])
 
     def test__acquire_connection_failure(self):
-        from google.cloud.happybase.pool import NoConnectionsAvailable
+        from happybase.pool import NoConnectionsAvailable
 
         pool = self._makeOneWithMockQueue(None)
         timeout = 1027

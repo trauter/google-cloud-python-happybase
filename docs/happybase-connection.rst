@@ -1,6 +1,6 @@
 HappyBase Connection
 ~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: google.cloud.happybase.connection
+.. automodule:: happybase.connection
   :members:
   :show-inheritance:

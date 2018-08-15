@@ -27,7 +27,7 @@ class _SendMixin(object):
 class TestBatch(unittest.TestCase):
 
     def _getTargetClass(self):
-        from google.cloud.happybase.batch import Batch
+        from happybase.batch import Batch
         return Batch
 
     def _makeOne(self, *args, **kwargs):
@@ -69,7 +69,7 @@ class TestBatch(unittest.TestCase):
 
     def test_constructor_with_non_default_wal(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import batch as MUT
+        from happybase import batch as MUT
 
         warned = []
 
@@ -206,7 +206,7 @@ class TestBatch(unittest.TestCase):
 
     def test_put_bad_wal(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import batch as MUT
+        from happybase import batch as MUT
 
         warned = []
 
@@ -322,7 +322,7 @@ class TestBatch(unittest.TestCase):
 
     def test_delete_bad_wal(self):
         from google.cloud._testing import _Monkey
-        from google.cloud.happybase import batch as MUT
+        from happybase import batch as MUT
 
         warned = []
 
@@ -477,7 +477,7 @@ class TestBatch(unittest.TestCase):
 class Test__get_column_pairs(unittest.TestCase):
 
     def _callFUT(self, *args, **kwargs):
-        from google.cloud.happybase.batch import _get_column_pairs
+        from happybase.batch import _get_column_pairs
         return _get_column_pairs(*args, **kwargs)
 
     def test_it(self):

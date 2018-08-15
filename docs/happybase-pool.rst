@@ -1,6 +1,6 @@
 HappyBase Connection Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: google.cloud.happybase.pool
+.. automodule:: happybase.pool
   :members:
   :show-inheritance:

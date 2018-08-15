@@ -34,7 +34,7 @@ from google.cloud.bigtable.column_family import MaxAgeGCRule
 from google.cloud.bigtable.column_family import MaxVersionsGCRule
 from google.cloud.bigtable.table import Table as _LowLevelTable
 
-from google.cloud.happybase.table import Table
+from happybase.table import Table
 
 # Constants reproduced here for HappyBase compatibility, though values
 # are all null.
@@ -237,7 +237,7 @@ class Connection(object):
         :type use_prefix: bool
         :param use_prefix: Whether to use the table prefix (if any).
 
-        :rtype: :class:`Table <google.cloud.happybase.table.Table>`
+        :rtype: :class:`Table <happybase.table.Table>`
         :returns: Table instance owned by this connection.
         """
         if use_prefix:

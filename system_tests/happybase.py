@@ -19,7 +19,7 @@ import struct
 import unittest
 
 from google.cloud.bigtable import client as client_mod
-from google.cloud.happybase.connection import Connection
+from happybase.connection import Connection
 
 from retry import RetryResult
 from system_test_utils import unique_resource_id

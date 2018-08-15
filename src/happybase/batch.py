@@ -43,7 +43,7 @@ class Batch(object):
        This behavior is in place to match the behavior in the HappyBase
        HBase / Thrift implementation.
 
-    :type table: :class:`Table <google.cloud.happybase.table.Table>`
+    :type table: :class:`Table <happybase.table.Table>`
     :param table: The table where mutations will be applied.
 
     :type timestamp: int
